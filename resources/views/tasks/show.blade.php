@@ -13,7 +13,7 @@
         </tr>
         <tr>
             <th>現状</th>
-            <td>{{ $message->status }}</td>
+            <td>{{ $task->status }}</td>
         </tr>
         <tr>
             <th>タスク内容</th>
