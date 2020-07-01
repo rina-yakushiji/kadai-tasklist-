@@ -12,6 +12,10 @@
             <td>{{ $task->id }}</td>
         </tr>
         <tr>
+            <th>現状</th>
+            <td>{{ $message->status }}</td>
+        </tr>
+        <tr>
             <th>タスク内容</th>
             <td>{{ $task->content }}</td>
         </tr>
