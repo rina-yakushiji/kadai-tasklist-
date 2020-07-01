@@ -19,7 +19,7 @@
 
                 <div class="collapse navbar-collapse" id="nav-bar">
                     <ul class="navbar-nav mr-auto"></ul>
-                    <li class="nav-item">{!! link_to_route('tasklist.create', '新しいタスクを入力する', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('tasks.create', '新しいタスクを入力する', [], ['class' => 'nav-link']) !!}</li>
                     <ul class="navbar-nav">
                     </ul>
                 </div>

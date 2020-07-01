@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Task;
 
 class TasksController extends Controller
 {
@@ -16,7 +17,7 @@ class TasksController extends Controller
     
         $tasks = Task::all();
      
-         return view('tasklist.index',[
+         return view('tasks.index',[
            'tasks' => $tasks ,
          ]);
     
@@ -32,7 +33,7 @@ class TasksController extends Controller
             
         $task = new Task;
      
-        return view('tasklist.create',[
+        return view('tasks.create',[
            'task' => $task ,
          ]);
     
@@ -63,9 +64,9 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        $task = Task::find0rfail($id);
+        $task = Task::findOrFail($id);
         
-        return view('tasklist.show',[
+        return view('tasks.show',[
             'task'=> $task,
             ]);
     }
@@ -78,9 +79,9 @@ class TasksController extends Controller
      */
     public function edit($id)
     {
-        $task = Task::find0rfail($id);
+        $task = Task::findOrFail($id);
         
-        return view('tasklist.edit',[
+        return view('tasks.edit',[
             'task'=> $task,
             ]);        
         
@@ -95,7 +96,7 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $task = Task::find0rfail($id);
+        $task = Task::findOrFail($id);
         $task->content = $request->content;
         $task->save();
         
@@ -112,7 +113,7 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        $task = Task::find0rfail($id);
+        $task = Task::findOrFail($id);
         $task->delete();
 
         
